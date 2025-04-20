@@ -1,0 +1,5 @@
+*TODO*
+- Find out how to support 'ispell-mode-map, should it export another variable?
+- Find out whether the while loop should be changed, such that keys are handled differently.
+- Change from using `(= char ?x)` to comparing with the map.
+- Find a way to redraw the help with custom keys

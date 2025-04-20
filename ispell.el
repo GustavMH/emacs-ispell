@@ -126,6 +126,24 @@
 ;;; **********************************************************************
 
 
+;;; Code for adding custom keybindings
+;; (defvar-keymap ispell-keymap
+;;   " " 'accept-word-once
+;;   "i" 'accept-word-into-dict
+;;   "a" 'accept-word-this-session
+;;   "r" 'replace-word
+;;   "R" 'replace-word
+;;   "?" 'show-help
+;;   "x" 'exit-move-cursor
+;;   "X" 'exit-leave-cursor
+;;   "q" 'kill
+;;   "l" 'look-up-replacement
+;;   "u" 'look-up-replacement-lowercase
+;;   "m" 'put-value-into-dict
+;;   "C-l" 'redraw-screen
+;;   "C-r" 'recursive-edit
+;;   "C-z" 'suspend-emacs)
+
 ;;;  ******* THIS FILE IS WRITTEN FOR ISPELL VERSION 3.1+
 
 (defcustom ispell-highlight-p 'block
@@ -2292,7 +2310,7 @@ Global `ispell-quit' set to start location to continue spell session."
 							  'block))
 		    t)
 		   ;; Quit and move point back.
-		   ((= char ?x)
+		   ((or (= char ?x) (= char ?\e))
 		    (ispell-pdict-save ispell-silently-savep)
 		    (message "Exited spell-checking")
 		    (setq ispell-quit t)
